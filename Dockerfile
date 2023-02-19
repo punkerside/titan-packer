@@ -16,4 +16,4 @@ RUN curl -o packer_1.8.4_linux_amd64.zip https://releases.hashicorp.com/packer/1
 
 COPY init.sh /usr/bin/init.sh
 WORKDIR /app
-CMD [ "/usr/bin/init.sh" ]
+ENTRYPOINT [ "/usr/bin/init.sh" ]
