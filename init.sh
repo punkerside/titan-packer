@@ -1,6 +1,6 @@
 #!/bin/bash
 
-init () {
+exec_init () {
     # init ansible
     rm -rf ansible/roles/common/
     ansible-galaxy install punkerside.ansible_ubuntu_common -p common/
@@ -11,7 +11,7 @@ init () {
     packer init packer/config.pkr.hcl
 }
 
-build () {
+exec_build () {
     packer build \
       -var 'project='${PROJECT}'' \
       -var 'env='${ENV}'' \
